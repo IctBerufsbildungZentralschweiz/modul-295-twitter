@@ -14,5 +14,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::fallback( function () {
-    return file_get_contents(public_path('index.html'));
+    if (!str_starts_with(request()->path(), 'api')) {
+        return file_get_contents(public_path('index.html'));
+    }
+
+    return response()->json(['error' => 'Not Found'], 404);
 });
