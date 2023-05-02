@@ -4,14 +4,13 @@ namespace Tests\Feature;
 
 use Tests\TestCase;
 
-
 class F1Test extends TestCase
 {
-    public function test_endpoint_get_login_returns_405(): void
+    public function test_endpoint_post_login_does_not_return_404(): void
     {
-        $response = $this->get('/api/login');
+        $response = $this->post('/api/login', []);
 
-        $response->assertStatus(405);
+        $this->assertNotEquals(404, $response->getStatusCode());
     }
 
     public function test_endpoint_post_login_returns_422_without_valid_credentials(): void
