@@ -14,6 +14,8 @@ class F6Test extends TestCase
         $response = $this->getJson('/api/logout');
 
         $response->assertStatus(200);
+
+        $response->assertJsonStructure(['message']);
     }
 
     public function test_endpoint_get_logout_returns_200_on_logout_fail(): void
