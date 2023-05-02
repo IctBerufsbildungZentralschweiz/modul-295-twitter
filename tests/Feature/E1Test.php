@@ -26,6 +26,7 @@ class E1Test extends TestCase
                         'id',
                         'name',
                         'email',
+                        'created_at',
                     ]
                 ]
             ]
