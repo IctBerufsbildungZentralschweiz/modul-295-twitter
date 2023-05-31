@@ -19,7 +19,7 @@ class H2Test extends TestCase
         $response->assertStatus(422);
     }
 
-    public function test_endpoint_post_tweets_returns_422_with_too_long_textt(): void
+    public function test_endpoint_post_tweets_returns_422_with_too_long_text(): void
     {
         Sanctum::actingAs(User::factory()->create());
 
