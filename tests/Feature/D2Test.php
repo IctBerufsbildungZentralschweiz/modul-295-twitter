@@ -13,7 +13,7 @@ class D2Test extends TestCase
     protected $seed = true;
 
 
-    public function test_tweet_factory_creates_60_users()
+    public function test_tweet_factory_creates_20_users()
     {
         $this->assertEquals(20, User::count());
     }
