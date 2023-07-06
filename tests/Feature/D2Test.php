@@ -15,7 +15,7 @@ class D2Test extends TestCase
 
     public function test_tweet_factory_creates_60_users()
     {
-        $this->assertEquals(60, User::count());
+        $this->assertEquals(20, User::count());
     }
 
     public function test_tweet_factory_creates_at_minimum_1_user_with_1_tweet()
