@@ -2,10 +2,14 @@
 
 namespace Tests\Feature;
 
+use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
 class F1Test extends TestCase
 {
+    use RefreshDatabase;
+    protected $seed = true;
+
     public function test_endpoint_post_login_does_not_return_404(): void
     {
         $response = $this->post('/api/login', []);

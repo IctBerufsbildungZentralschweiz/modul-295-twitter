@@ -9,9 +9,7 @@ use Tests\TestCase;
 class D2Test extends TestCase
 {
     use RefreshDatabase;
-
     protected $seed = true;
-
 
     public function test_tweet_factory_creates_20_users()
     {

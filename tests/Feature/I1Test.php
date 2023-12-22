@@ -11,7 +11,6 @@ use Tests\TestCase;
 class I1Test extends TestCase
 {
     use RefreshDatabase;
-
     protected $seed = true;
 
     public function test_endpoint_get_users_id_returns_asserted_data_format()
@@ -48,7 +47,7 @@ class I1Test extends TestCase
 
     public function test_endpoint_get_users_id_returns_positive_is_valid_if_likes_more_than_100000()
     {
-        DB::statement('SET FOREIGN_KEY_CHECKS=0;');
+        DB::statement('PRAGMA foreign_keys = OFF;');
 
         $user = User::factory()->has(
             Tweet::factory()->count(1)->state([

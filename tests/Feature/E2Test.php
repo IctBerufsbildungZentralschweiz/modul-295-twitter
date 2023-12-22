@@ -9,7 +9,6 @@ use Tests\TestCase;
 class E2Test extends TestCase
 {
     use RefreshDatabase;
-
     protected $seed = true;
 
     public function test_there_is_no_n1_problem()

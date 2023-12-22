@@ -10,7 +10,6 @@ use Tests\TestCase;
 class D1Test extends TestCase
 {
     use RefreshDatabase;
-
     protected $seed = true;
 
     public function test_tweet_factory_creates_related_user()

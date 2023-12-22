@@ -8,7 +8,6 @@ use Tests\TestCase;
 class D3Test extends TestCase
 {
     use RefreshDatabase;
-
     protected $seed = true;
 
     public function test_endpoint_get_user_id_returns_200()

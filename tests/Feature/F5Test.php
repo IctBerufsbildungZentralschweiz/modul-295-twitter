@@ -3,11 +3,15 @@
 namespace Tests\Feature;
 
 use App\Models\User;
+use Illuminate\Foundation\Testing\RefreshDatabase;
 use Laravel\Sanctum\Sanctum;
 use Tests\TestCase;
 
 class F5Test extends TestCase
 {
+    use RefreshDatabase;
+    protected $seed = true;
+
     public function test_endpoint_get_auth_returns_401_without_valid_token(): void
     {
         $response = $this->getJson('/api/auth');

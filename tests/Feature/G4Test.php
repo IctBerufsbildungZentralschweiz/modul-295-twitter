@@ -3,11 +3,15 @@
 namespace Tests\Feature;
 
 use App\Models\User;
+use Illuminate\Foundation\Testing\RefreshDatabase;
 use Laravel\Sanctum\Sanctum;
 use Tests\TestCase;
 
 class G4Test extends TestCase
 {
+    use RefreshDatabase;
+    protected $seed = true;
+
     public function test_endpoint_put_me_returns_200_with_valid_token(): void
     {
         $user = Sanctum::actingAs(User::factory()->create());

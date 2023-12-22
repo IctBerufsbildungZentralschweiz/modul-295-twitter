@@ -10,7 +10,6 @@ use Tests\TestCase;
 class E4Test extends TestCase
 {
     use RefreshDatabase;
-
     protected $seed = true;
 
     public function test_endpoint_get_user_id_tweets_returns_200()

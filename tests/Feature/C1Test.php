@@ -9,7 +9,6 @@ use Tests\TestCase;
 class C1Test extends TestCase
 {
     use RefreshDatabase;
-
     protected $seed = true;
 
     public function test_endpoint_get_tweets_returns_200_status_code()
