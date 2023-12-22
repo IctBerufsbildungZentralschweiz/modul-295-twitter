@@ -6,7 +6,7 @@ use App\Models\User;
 use Laravel\Sanctum\Sanctum;
 use Tests\TestCase;
 
-class H2Test extends TestCase
+class G2Test extends TestCase
 {
     public function test_endpoint_post_tweets_returns_422_with_too_short_text(): void
     {

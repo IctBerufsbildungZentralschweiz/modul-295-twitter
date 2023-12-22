@@ -6,7 +6,7 @@ use App\Models\User;
 use Laravel\Sanctum\Sanctum;
 use Tests\TestCase;
 
-class H4Test extends TestCase
+class G4Test extends TestCase
 {
     public function test_endpoint_put_me_returns_200_with_valid_token(): void
     {
