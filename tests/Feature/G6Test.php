@@ -7,7 +7,7 @@ use App\Models\User;
 use Laravel\Sanctum\Sanctum;
 use Tests\TestCase;
 
-class H6Test extends TestCase
+class G6Test extends TestCase
 {
     public function test_if_related_tweets_get_deleted(): void
     {

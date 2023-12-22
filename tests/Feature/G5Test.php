@@ -6,7 +6,7 @@ use App\Models\User;
 use Laravel\Sanctum\Sanctum;
 use Tests\TestCase;
 
-class H5Test extends TestCase
+class G5Test extends TestCase
 {
     public function test_endpoint_delete_me_returns_401_without_valid_token(): void
     {
