@@ -3,10 +3,15 @@
 namespace Tests\Feature;
 
 use App\Models\User;
+use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
 class F3Test extends TestCase
 {
+    use RefreshDatabase;
+
+    protected $seed = true;
+
     public function test_endpoint_post_login_returns_token_as_plain_text_with_valid_credentials(): void
     {
         $user = User::factory()->state([
