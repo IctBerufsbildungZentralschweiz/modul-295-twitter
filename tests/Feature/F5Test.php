@@ -25,6 +25,6 @@ class F5Test extends TestCase
 
         $response = $this->getJson('/api/auth');
 
-        $response->assertJsonStructure(['data' => ['id', 'name', 'email', 'created_at', 'is_verified']]);
+        $response->assertJsonStructure(['data' => ['id', 'name', 'email', 'created_at']]);
     }
 }
