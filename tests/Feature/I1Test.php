@@ -52,7 +52,7 @@ class I1Test extends TestCase
 
         $user = User::factory()->has(
             Tweet::factory()->count(1)->state([
-                'likes' => 100001
+                'likes' => 80001
             ])
         )->create();
 
@@ -64,7 +64,7 @@ class I1Test extends TestCase
     {
         $user = User::factory()->has(
             Tweet::factory()->count(1)->state([
-                'likes' => 99999
+                'likes' => 79999
             ])
         )->create();
 
