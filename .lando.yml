@@ -1,0 +1,6 @@
+name: modul-295-twitter
+recipe: laravel
+config:
+  php: '8.2'
+  webroot: public
+  cache: none
