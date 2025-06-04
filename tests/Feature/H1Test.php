@@ -19,11 +19,11 @@ class H1Test extends TestCase
     {
         Model::unguard();
 
-        $user = Sanctum::actingAs(User::factory()->create());
-        $tweet = $user->tweets()->create(Tweet::factory()->make(['likes' => 0])->toArray());
+        Sanctum::actingAs(User::factory()->create());
+        $tweetOwner = User::factory()->create();
+        $tweet = $tweetOwner->tweets()->create(Tweet::factory()->make(['likes' => 0])->toArray());
 
         $this->postJson('/api/tweets/' . $tweet->id . '/like');
-
 
         $this->assertEquals(1, $tweet->fresh()->likes);
     }

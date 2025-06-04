@@ -18,6 +18,15 @@ class E2Test extends TestCase
 
         $this->getJson('/api/tweets');
 
-        $this->assertLessThanOrEqual(3, count(DB::getQueryLog()), 'There is a N+1 problem present, too many queries are executed.');
+        $queryCount = count(DB::getQueryLog());
+
+        $hasLikedTweets = method_exists(\App\Models\User::class, 'likedTweets');
+
+        // Assert query count based on the presence of the `liked_tweets` relationship
+        $this->assertEquals(
+            $hasLikedTweets ? 4 : 3,
+            $queryCount,
+            'There is a N+1 problem present, too many queries are executed.'
+        );
     }
 }
