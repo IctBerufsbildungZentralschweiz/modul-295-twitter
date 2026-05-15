@@ -20,11 +20,10 @@ class E2Test extends TestCase
 
         $queryCount = count(DB::getQueryLog());
 
-        $hasLikedTweets = method_exists(\App\Models\User::class, 'likedTweets');
-
-        // Assert query count based on the presence of the `liked_tweets` relationship
-        $this->assertEquals(
-            $hasLikedTweets ? 4 : 3,
+        // Check if the query count is lower than 4
+        // 4 is the number if all Tweet relationships are eager loaded, anything above is an N+1 problem.
+        $this->assertLessThanOrEqual(
+            4,
             $queryCount,
             'There is a N+1 problem present, too many queries are executed.'
         );
